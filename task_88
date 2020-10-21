@@ -1,0 +1,45 @@
+package com.main;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int n;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number: ");
+        n = sc.nextInt();
+        int x = n * n;
+        String str = Integer.toString(x);
+        String str1 = Integer.toString(n);
+        if (str.contains("3") == true) {
+            System.out.println("1) " + n + "^2 contains number 3!");
+        } else {
+            System.out.println("1) " + n + "^2 doesn`t contain number 3!");
+        }
+        System.out.println("2) Reverse: " + reverseStr(str1));
+        System.out.println("3) Replacement: " + firstLast(str1));
+        System.out.println("4) Plus 1: " + one(str1));
+    }
+    public static String reverseStr(String str){
+        char [] array = str.toCharArray();
+        String str1 = "";
+        for(int i = array.length - 1; i >= 0; i--){
+            str1 += array[i];
+        }
+        return str1;
+    }
+    public static String firstLast(String str){
+        char [] array = str.toCharArray();
+        char str1 = array[0];
+        char str2 = array[array.length - 1];
+        array[0] = str2;
+        array[array.length - 1] = str1;
+        return String.valueOf(array);
+    }
+    public static String one(String str){
+        str += "1";
+        String str1 = "1";
+        String str3 = str1.concat(str);
+        return str3;
+    }
+}
