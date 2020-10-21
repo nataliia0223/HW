@@ -1,0 +1,34 @@
+package com.Main;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int rad;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the radius of flower bed: ");
+        rad = sc.nextInt();
+        double perimeter = 2 * rad * Math.PI;
+        double area = rad * rad * Math.PI;
+        System.out.println("1) Perimeter of the flower bed = " + perimeter + "\n   Area of the flower bed = " + area);
+
+        Scanner sc1 = new Scanner(System.in);
+        System.out.println("\n2) What is your name?");
+        String name = sc1.nextLine();
+        System.out.println("  Where do you live, " + name + "?");
+        String address = sc1.nextLine();
+        System.out.println(name + " lives at " + address + "!");
+
+        int c1, t1;
+        int sum = 0;
+        for(int i = 1; i <= 3; i++) {
+            System.out.println("\n3) Enter the standart unit of the " + i + " country and minutes of talk: ");
+            c1 = sc1.nextInt();
+            t1 = sc1.nextInt();
+            System.out.println(i + " talk " + c1 * t1 );
+            sum += c1 * t1;
+        }
+        System.out.println("All talks together " + sum );
+    }
+}
